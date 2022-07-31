@@ -11,10 +11,6 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "ParseForm() err: %v", err)
 		return
 	}
-	if r.Method != "GET" {
-		http.Error(w, "Method not suported", http.StatusNotFound)
-		return
-	}
 	fmt.Fprintf(w, "POST request successful")
 	name := r.FormValue("name")
 	email := r.FormValue("email")
